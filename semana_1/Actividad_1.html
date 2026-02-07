@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1 - Binario</title>
+    <!--  
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #1a1a2e;
+                color: #e0e0e0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                color: #4ecca3;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            .section-separator {
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #e94560, transparent);
+                margin: 60px 0;
+            }
+            
+            p.text-source {
+                font-size: 1.2rem;
+                background: #16213e;
+                padding: 15px 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                margin-bottom: 30px;
+                border-left: 5px solid #e94560;
+                max-width: 800px;
+                text-align: center;
+            }
+            
+            .table-container {
+                max-height: 500px;
+                /* Limit height for individual tables */
+                overflow-y: auto;
+                width: 100%;
+                max-width: 800px;
+                border-radius: 10px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                margin-bottom: 20px;
+            }
+            
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                background-color: #16213e;
+            }
+            
+            th,
+            td {
+                text-align: center;
+                padding: 12px 15px;
+                border-bottom: 1px solid #0f3460;
+            }
+            
+            th {
+                background-color: #0f3460;
+                color: #4ecca3;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+            }
+            
+            tr:last-child td {
+                border-bottom: none;
+        }
+        
+        tr:hover {
+            background-color: #1a1a2e;
+            color: #e94560;
+            transition: background-color 0.3s ease;
+        }
+        
+        .binary-cell {
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 2px;
+            color: #4ecca3;
+        }
+        
+        .calc-cell {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #a0a0a0;
+        }
+        
+        /* Scrollbar styling */
+        .table-container::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        .table-container::-webkit-scrollbar-track {
+            background: #0f3460;
+        }
+        
+        .table-container::-webkit-scrollbar-thumb {
+            background: #4ecca3;
+            border-radius: 5px;
+        }
+        
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #e94560;
+        }
+    </style>
+-->
+</head>
+
+<body>
+
+    <!-- First Section -->
+    <h1>Conversión de Texto a Binario (1)</h1>
+
+    <p class="text-source">Empezamos el técnico en la Universidad Galileo</p>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Carácter</th>
+                    <th>Operación (Suma potencias de 2)</th>
+                    <th>Código Binario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>E</td>
+                    <td class="calc-cell">64 + 4 + 1 = 69</td>
+                    <td class="binary-cell">01000101</td>
+                </tr>
+                <tr>
+                    <td>m</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 1 = 109</td>
+                    <td class="binary-cell">01101101</td>
+                </tr>
+                <tr>
+                    <td>p</td>
+                    <td class="calc-cell">64 + 32 + 16 = 112</td>
+                    <td class="binary-cell">01110000</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>z</td>
+                    <td class="calc-cell">64 + 32 + 16 + 8 + 2 = 122</td>
+                    <td class="binary-cell">01111010</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td class="calc-cell">64 + 32 + 1 = 97</td>
+                    <td class="binary-cell">01100001</td>
+                </tr>
+                <tr>
+                    <td>m</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 1 = 109</td>
+                    <td class="binary-cell">01101101</td>
+                </tr>
+                <tr>
+                    <td>o</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 + 1 = 111</td>
+                    <td class="binary-cell">01101111</td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td class="calc-cell">64 + 32 + 16 + 2 + 1 = 115</td>
+                    <td class="binary-cell">01110011</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 = 108</td>
+                    <td class="binary-cell">01101100</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>t</td>
+                    <td class="calc-cell">64 + 32 + 16 + 4 = 116</td>
+                    <td class="binary-cell">01110100</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>c</td>
+                    <td class="calc-cell">64 + 32 + 2 + 1 = 99</td>
+                    <td class="binary-cell">01100011</td>
+                </tr>
+                <tr>
+                    <td>n</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 = 110</td>
+                    <td class="binary-cell">01101110</td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td class="calc-cell">64 + 32 + 8 + 1 = 105</td>
+                    <td class="binary-cell">01101001</td>
+                </tr>
+                <tr>
+                    <td>c</td>
+                    <td class="calc-cell">64 + 32 + 2 + 1 = 99</td>
+                    <td class="binary-cell">01100011</td>
+                </tr>
+                <tr>
+                    <td>o</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 + 1 = 111</td>
+                    <td class="binary-cell">01101111</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>n</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 = 110</td>
+                    <td class="binary-cell">01101110</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 = 108</td>
+                    <td class="binary-cell">01101100</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td class="calc-cell">64 + 32 + 1 = 97</td>
+                    <td class="binary-cell">01100001</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td class="calc-cell">64 + 16 + 4 + 1 = 85</td>
+                    <td class="binary-cell">01010101</td>
+                </tr>
+                <tr>
+                    <td>n</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 = 110</td>
+                    <td class="binary-cell">01101110</td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td class="calc-cell">64 + 32 + 8 + 1 = 105</td>
+                    <td class="binary-cell">01101001</td>
+                </tr>
+                <tr>
+                    <td>v</td>
+                    <td class="calc-cell">64 + 32 + 16 + 4 + 2 = 118</td>
+                    <td class="binary-cell">01110110</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>r</td>
+                    <td class="calc-cell">64 + 32 + 16 + 2 = 114</td>
+                    <td class="binary-cell">01110010</td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td class="calc-cell">64 + 32 + 16 + 2 + 1 = 115</td>
+                    <td class="binary-cell">01110011</td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td class="calc-cell">64 + 32 + 8 + 1 = 105</td>
+                    <td class="binary-cell">01101001</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td class="calc-cell">64 + 32 + 4 = 100</td>
+                    <td class="binary-cell">01100100</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td class="calc-cell">64 + 32 + 1 = 97</td>
+                    <td class="binary-cell">01100001</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td class="calc-cell">64 + 32 + 4 = 100</td>
+                    <td class="binary-cell">01100100</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td class="calc-cell">64 + 4 + 2 + 1 = 71</td>
+                    <td class="binary-cell">01000111</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td class="calc-cell">64 + 32 + 1 = 97</td>
+                    <td class="binary-cell">01100001</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 = 108</td>
+                    <td class="binary-cell">01101100</td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td class="calc-cell">64 + 32 + 8 + 1 = 105</td>
+                    <td class="binary-cell">01101001</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 = 108</td>
+                    <td class="binary-cell">01101100</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>o</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 + 1 = 111</td>
+                    <td class="binary-cell">01101111</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-separator"></div>
+
+    <!-- Second Section -->
+    <h1>Conversión de Texto a Binario (2)</h1>
+
+    <p class="text-source">Jose Angel Ramirez Rodriguez</p>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Carácter</th>
+                    <th>Operación (Suma potencias de 2)</th>
+                    <th>Código Binario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>J</td>
+                    <td class="calc-cell">64 + 8 + 2 = 74</td>
+                    <td class="binary-cell">01001010</td>
+                </tr>
+                <tr>
+                    <td>o</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 + 1 = 111</td>
+                    <td class="binary-cell">01101111</td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td class="calc-cell">64 + 32 + 16 + 2 + 1 = 115</td>
+                    <td class="binary-cell">01110011</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td class="calc-cell">64 + 1 = 65</td>
+                    <td class="binary-cell">01000001</td>
+                </tr>
+                <tr>
+                    <td>n</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 = 110</td>
+                    <td class="binary-cell">01101110</td>
+                </tr>
+                <tr>
+                    <td>g</td>
+                    <td class="calc-cell">64 + 32 + 4 + 2 + 1 = 103</td>
+                    <td class="binary-cell">01100111</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>l</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 = 108</td>
+                    <td class="binary-cell">01101100</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td class="calc-cell">64 + 16 + 2 = 82</td>
+                    <td class="binary-cell">01010010</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td class="calc-cell">64 + 32 + 1 = 97</td>
+                    <td class="binary-cell">01100001</td>
+                </tr>
+                <tr>
+                    <td>m</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 1 = 109</td>
+                    <td class="binary-cell">01101101</td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td class="calc-cell">64 + 32 + 8 + 1 = 105</td>
+                    <td class="binary-cell">01101001</td>
+                </tr>
+                <tr>
+                    <td>r</td>
+                    <td class="calc-cell">64 + 32 + 16 + 2 = 114</td>
+                    <td class="binary-cell">01110010</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>z</td>
+                    <td class="calc-cell">64 + 32 + 16 + 8 + 2 = 122</td>
+                    <td class="binary-cell">01111010</td>
+                </tr>
+                <tr>
+                    <td>(espacio)</td>
+                    <td class="calc-cell">32 = 32</td>
+                    <td class="binary-cell">00100000</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td class="calc-cell">64 + 16 + 2 = 82</td>
+                    <td class="binary-cell">01010010</td>
+                </tr>
+                <tr>
+                    <td>o</td>
+                    <td class="calc-cell">64 + 32 + 8 + 4 + 2 + 1 = 111</td>
+                    <td class="binary-cell">01101111</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td class="calc-cell">64 + 32 + 4 = 100</td>
+                    <td class="binary-cell">01100100</td>
+                </tr>
+                <tr>
+                    <td>r</td>
+                    <td class="calc-cell">64 + 32 + 16 + 2 = 114</td>
+                    <td class="binary-cell">01110010</td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td class="calc-cell">64 + 32 + 8 + 1 = 105</td>
+                    <td class="binary-cell">01101001</td>
+                </tr>
+                <tr>
+                    <td>g</td>
+                    <td class="calc-cell">64 + 32 + 4 + 2 + 1 = 103</td>
+                    <td class="binary-cell">01100111</td>
+                </tr>
+                <tr>
+                    <td>u</td>
+                    <td class="calc-cell">64 + 32 + 16 + 4 + 1 = 117</td>
+                    <td class="binary-cell">01110101</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td class="calc-cell">64 + 32 + 4 + 1 = 101</td>
+                    <td class="binary-cell">01100101</td>
+                </tr>
+                <tr>
+                    <td>z</td>
+                    <td class="calc-cell">64 + 32 + 16 + 8 + 2 = 122</td>
+                    <td class="binary-cell">01111010</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
